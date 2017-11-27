@@ -161,6 +161,7 @@ export default {
 	toolbarTextColor: "#fff",
 	iosStatusbar: "light-content",
 	toolbarDefaultBorder: "#2874F0",
+
 	get statusBarColor() {
 		return color(this.toolbarDefaultBg)
 			.darken(0.2)
@@ -174,10 +175,10 @@ export default {
 	iconHeaderSize: platform === "ios" ? 33 : 24,
 
 	// InputGroup
-	inputFontSize: 17,
-	inputBorderColor: "#D9D5DC",
-	inputSuccessBorderColor: "#2b8339",
-	inputErrorBorderColor: "#ed2f2f",
+	// inputFontSize: 17,
+	// inputBorderColor: "",
+	// inputSuccessBorderColor: "#2b8339",
+	// inputErrorBorderColor: "#ed2f2f",
 
 	get inputColor() {
 		return this.textColor;

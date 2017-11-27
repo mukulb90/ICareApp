@@ -47,3 +47,4 @@ $ npm install
 
 
 For apps with more advance designs, please visit **[NativeBase Market](https://market.nativebase.io/)**.
+# ICareApp
