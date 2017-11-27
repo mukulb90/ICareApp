@@ -6,6 +6,7 @@ import Login from "./container/LoginContainer";
 import Home from "./container/HomeContainer";
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
+import SignUp from "./container/SignUpContainer";
 
 const Drawer = DrawerNavigator(
 	{
@@ -22,6 +23,7 @@ const App = StackNavigator(
 		Login: { screen: Login },
 		BlankPage: { screen: BlankPage },
 		Drawer: { screen: Drawer },
+		SignUp: {screen: SignUp}
 	},
 	{
 		initialRouteName: "Login",

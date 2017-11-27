@@ -9,8 +9,16 @@ export interface Props {
 	onLogin: Function,
 }
 
-export interface State {}
+export interface State {
+
+}
+
 class Login extends React.Component<Props, State> {
+
+	handleSignupClick = () => {
+		this.props.navigation.navigate("SignUp");
+	}
+
 	render() {
 		return (
 			<Container style={styles.container}>
@@ -34,7 +42,7 @@ class Login extends React.Component<Props, State> {
 					</View>
 				</Content>
 				<Row style={styles.signupbtnWrap}>
-					<Button style={styles.signupbtn}>
+					<Button style={styles.signupbtn} onPress={this.handleSignupClick}>
 						<Text style={styles.signupbtnText}> Do not have an account?
 							<Text style={{fontWeight: 'bold', padding:100}}>
 									Sign Up
