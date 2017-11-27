@@ -24,7 +24,6 @@
     "ios": "react-native run-ios",
     "test": "yarn jest && flow && eslint .",
     "jest": "node node_modules/jest/bin/jest.js",
-    "precommit": "yarn test"
   },
   "jest": {
     "preset": "react-native",
