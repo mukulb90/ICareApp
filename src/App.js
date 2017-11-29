@@ -23,10 +23,11 @@ const App = StackNavigator(
 		Login: { screen: Login },
 		BlankPage: { screen: BlankPage },
 		Drawer: { screen: Drawer },
-		SignUp: {screen: SignUp}
+		SignUp: {screen: SignUp},
+		Home: { screen: Home }
 	},
 	{
-		initialRouteName: "Login",
+		initialRouteName: "Home",
 		headerMode: "none",
 	}
 );

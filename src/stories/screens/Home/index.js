@@ -14,6 +14,8 @@ import {
   ListItem
 } from "native-base";
 
+import { VictoryBar } from "victory-native";
+
 import styles from "./styles";
 export interface Props {
   navigation: any;
@@ -49,7 +51,7 @@ class Home extends React.Component<Props, State> {
                     name: { item }
                   })}
               >
-                <Text>{item}</Text>
+              <VictoryBar />
               </ListItem>
             ))}
           </List>
