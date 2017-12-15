@@ -39,7 +39,10 @@ class Home extends React.Component<Props, State> {
 
   render() {
     const items = this.props.metrics;
-
+    var name;
+    if(this.props.user){
+      name = this.props.user.name;
+    }
     return (
       <Container style={styles.container}>
         <Header style={styles.header}>
@@ -58,12 +61,13 @@ class Home extends React.Component<Props, State> {
           <Right />
         </Header>
         <Content>
-         <Text style={styles.greetingTitle}>
-            Welcome Back, Mukul
+          <Text style={styles.greetingTitle}>
+            Welcome Back, {name}
          </Text>
          <Text style={styles.greetingSubtitle}>
           Things look alright
         </Text>
+          
           <List dataArray={items} contentContainerStyle={styles.contentContainerStyle}
                       renderRow={(item) => {
                         const chartColor = this.getChartColorByName(item.metricsName)
