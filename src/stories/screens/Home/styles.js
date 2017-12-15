@@ -2,6 +2,11 @@ import { StyleSheet } from "react-native";
 
 const styles: any = StyleSheet.create({
 	container: {
+		backgroundColor: "#f8f8f9",
+	},
+	contentContainerStyle:{
+		backgroundColor: "#f8f8f9",
+		padding: 20
 	},
 	greetingCard: {
 		flex: 0,
@@ -9,7 +14,20 @@ const styles: any = StyleSheet.create({
 		marginTop: 0,
 		marginBottom: 0,
 		marginLeft: 0,
-		marginRight: 0
+		marginRight: 0,
+		borderWidth: 1,
+	 	borderRadius: 2,
+	 	borderColor: '#FFF',
+	 	borderBottomWidth: 0,
+	 	shadowColor: '#000',
+	 	shadowOffset: { width: 0, height: 2 },
+	 	shadowOpacity: 0.2,
+	 	shadowRadius: 2,
+	 	elevation: 1,
+	 	marginLeft: 5,
+	 	marginRight: 5,
+	 	marginTop: 10,
+		backgroundColor: "red"
 	},
 	greetingCardItem: {
 		height: 100,
@@ -21,25 +39,34 @@ const styles: any = StyleSheet.create({
 		flex: 0
 	},
 	greetingTitle: {
-		flexDirection: "column",
-		flex: 1,
+		flexDirection: "row",
+		flex: 0,
 		color: "#7C8B9E",
-		fontWeight: "bold"
+		fontWeight: "bold",
+		padding: 20,
+		paddingBottom: 10
 	},
 	greetingSubtitle: {
 		color: "#7C8B9E",
-		fontWeight: "bold"
+		fontWeight: "bold",
+		paddingLeft: 20,
+		paddingRight: 20,
+		paddingTop: 0
 	},
 	metricCard: {
-		borderWidth:0,
-		marginTop: 0,
-		marginBottom: 0,
-		marginLeft: 0,
-		marginRight: 0,
-		borderLeftWidth: 0,
-		borderRightWidth: 0,
-		borderTopWidth: 0,
-		borderBottomWidth: 0,
+		backgroundColor:"#fff",
+		borderWidth: 1,
+	 	borderRadius: 2,
+	 	borderColor: '#FFF',
+	 	borderBottomWidth: 0,
+	 	shadowColor: '#000',
+	 	shadowOffset: { width: 0, height: 2 },
+	 	shadowOpacity: 0.2,
+	 	shadowRadius: 2,
+	 	elevation: 1,
+	 	marginLeft: 5,
+	 	marginRight: 5,
+	 	marginTop: 10,
 		flexDirection: "column",
 		alignItems: "center"
 	},
@@ -51,7 +78,7 @@ const styles: any = StyleSheet.create({
 	},
 	metricValue: {
 		flex: 1,
-		textAlign:'right',
+		textAlign:'center',
 		color: "#3C5073",
 		fontSize: 30,
 		fontWeight: "400"
@@ -65,7 +92,8 @@ const styles: any = StyleSheet.create({
 		fontSize: 20
 	},
 	metricNameText: {
-		color: "#7C8B9E"
+		color: "#7C8B9E",
+		flex: 1
 	}
 });
 export default styles;

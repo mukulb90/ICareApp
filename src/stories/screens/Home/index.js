@@ -25,39 +25,20 @@ export interface Props {
 }
 export interface State {}
 class Home extends React.Component<Props, State> {
+
+  getChartColorByName(metricName){
+    if(metricName == 'Heart Rate'){
+      return "#ce406e";
+    }
+    if(metricName == 'Temperature'){
+      return "#7c562a";
+    } else {
+      return "#497b99";
+    }
+  }
+
   render() {
-    const items = [
-        {
-          metricName:"Temperature",
-          metricUnit: "degree",
-          value: 36.44,
-          normalValue: 37,
-          threshold: 5,
-          historicalData:[{
-            value: 12,
-            timeStamp: new Date(),
-          }, {
-            value: 13,
-            timeStamp: new Date()
-          }]
-        },
-        {
-          metricName:"Heart Rate",
-          metricUnit: "bpm",
-          value: 78,
-          normalValue: 80,
-          threshold: 3,
-          historicalData: []
-        },
-        {
-          metricName:"Heart Rate",
-          metricUnit: "bpm",
-          value: 78,
-          normalValue: 80,
-          threshold: 3,
-          historicalData: []
-        }
-    ];
+    const items = this.props.metrics;
 
     return (
       <Container style={styles.container}>
@@ -77,47 +58,47 @@ class Home extends React.Component<Props, State> {
           <Right />
         </Header>
         <Content>
-          <Card style={styles.greetingCard}>
-            <CardItem style={styles.greetingCardItem}>
-              <Body style={styles.greetingCardBody}>
-               <Text style={styles.greetingTitle}>
-                  Welcome Back, Mukul
-               </Text>
-               <Text style={styles.greetingSubtitle}>
-                Things look alright
-               </Text>
-             </Body>
-            </CardItem>
-          </Card>
-
-          <List dataArray={items}
-                      renderRow={(item) =>
-                        <Card style={styles.metricCard}>
+         <Text style={styles.greetingTitle}>
+            Welcome Back, Mukul
+         </Text>
+         <Text style={styles.greetingSubtitle}>
+          Things look alright
+        </Text>
+          <List dataArray={items} contentContainerStyle={styles.contentContainerStyle}
+                      renderRow={(item) => {
+                        const chartColor = this.getChartColorByName(item.metricsName)
+                        return <Card style={styles.metricCard}>
                           <Left style={styles.metricCardTitle}>
-                            <Text style={styles.metricValue}>{item.value}</Text>
-                            <Text style={styles.metricUnit}>{item.metricUnit}</Text>
+                            <Text style={styles.metricValue}>{item.metricsValue} {item.metricsUnit}</Text>
                           </Left>
                           <Body style={styles.metricName}>
-                            <Text style={styles.metricNameText}>{item.metricName}</Text>
+                            <Text style={styles.metricNameText}>{item.metricsName}</Text>
                           </Body>
                           <Right style={styles.metricChart}>
                             <VictoryLine
                               style={{
-                                data: { stroke: "#c43a31" }
+                                data: {
+                                  stroke: chartColor
+                                }
                               }}
+                              width={300}
                               height={150}
                               interpolation="natural"
-                              data={[
-                                { x: 1, y: 2 },
-                                { x: 2, y: 3 },
-                                { x: 3, y: 5 },
-                                { x: 4, y: 4 },
-                                { x: 5, y: 7 }
-                              ]}
+                              data={
+                                item.historicalDataPoints.map(
+                                  (point, index) => {
+                                    return {
+                                      x: new Date(point.timeStamp),
+                                      y: point.value
+                                    }
+                                  }
+                                )
+                              }
                             />
                           </Right>
                         </Card>
-                      }>
+                      }
+              }>
           </List>
 
         </Content>

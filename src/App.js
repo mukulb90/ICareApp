@@ -8,6 +8,8 @@ import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
 import SignUp from "./container/SignUpContainer";
 
+export const endPoint = 'http://ec2-54-153-51-19.us-west-1.compute.amazonaws.com:8080/';
+
 const Drawer = DrawerNavigator(
 	{
 		Home: { screen: Home },
@@ -27,7 +29,7 @@ const App = StackNavigator(
 		Home: { screen: Home }
 	},
 	{
-		initialRouteName: "Home",
+		initialRouteName: "Login",
 		headerMode: "none",
 	}
 );
