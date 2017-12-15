@@ -7,6 +7,6 @@ export interface Props {
 export interface State {}
 export default class SidebarContainer extends React.Component<Props, State> {
 	render() {
-		return <Sidebar navigation={this.props.navigation} screenProps={this.props.screenProps} />;
+		return <Sidebar navigation={this.props.navigation} />;
 	}
 }

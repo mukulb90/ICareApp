@@ -23,11 +23,7 @@ class HomeContainer extends React.Component<Props, State> {
 	}
 
 	fetchData = () => {
-		const user  = this.props.screenProps.user;
-		console.log(user);
-		if(user){
-			this.fetchMetrics("username", user.deviceId);
-		}
+		this.fetchMetrics("username", "device2");
 	}
 
 	componentDidMount() {
@@ -50,8 +46,7 @@ class HomeContainer extends React.Component<Props, State> {
 	}
 
 	render() {
-		const user  = this.props.screenProps.user;
-		return <Home navigation={this.props.navigation} metrics={this.state.metrics} user={user} />;
+		return <Home navigation={this.props.navigation} metrics={this.state.metrics} />;
 	}
 }
 

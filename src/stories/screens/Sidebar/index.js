@@ -34,10 +34,9 @@ export default class Sidebar extends React.Component<Props, State> {
 								<ListItem
 									button
 									onPress={() => {
-										if(data.route === "Login"){
-											this.props.screenProps.logout();
-											this.props.navigation.navigate("Login");
-										}
+										data.route === "Login"
+											? this.props.navigation.dispatch(resetAction)
+											: this.props.navigation.navigate(data.route);
 									}}
 								>
 									<Text>{data.caption}</Text>
